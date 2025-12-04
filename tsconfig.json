@@ -1,47 +1,44 @@
 {
-    "compilerOptions": {
-      // Language and Environment
-      "target": "ES2020",
-      "lib": ["ES2020", "DOM", "DOM.Iterable"],
-      "jsx": "react-jsx",
-      
-      // Modules
-      "module": "ESNext",
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      
-      // Emit
-      "declaration": true,
-      "declarationMap": true,
-      "sourceMap": true,
-      "outDir": "./dist",
-      "noEmit": true,
-      
-      // Interop Constraints
-      "esModuleInterop": true,
-      "allowSyntheticDefaultImports": true,
-      "forceConsistentCasingInFileNames": true,
-      "isolatedModules": true,
-      
-      // Type Checking (Strict Mode)
-      "strict": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "noImplicitReturns": true,
-      "noFallthroughCasesInSwitch": true,
-      "noUncheckedIndexedAccess": true,
-      
-      // Skip Library Checking
-      "skipLibCheck": true,
-      
-      // Path Aliases
-      "baseUrl": "./src",
-      "paths": {
-        "@features/*": ["features/*"],
-        "@shared/*": ["shared/*"],
-        "@app/*": ["app/*"]
-      }
-    },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules", "dist", "cypress"]
-  }
+  "compilerOptions": {
+    // Language and Environment
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    
+    // Modules
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    
+    // Emit
+    "sourceMap": true,
+    "outDir": "./dist",
+    
+    // Interop Constraints
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    
+    // Type Checking (Strict Mode)
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    
+    // Skip Library Checking
+    "skipLibCheck": true,
+    
+    // Path Aliases
+    "baseUrl": "./src",
+    "paths": {
+      "@features/*": ["features/*"],
+      "@shared/*": ["shared/*"],
+      "@app/*": ["app/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "cypress"]
+}
