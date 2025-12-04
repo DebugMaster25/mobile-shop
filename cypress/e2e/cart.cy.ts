@@ -52,19 +52,25 @@ describe('Shopping Cart', () => {
     cy.get('.option-button.selected').should('have.length.at.least', 2);
     cy.get('.add-to-cart-button').click();
     
-    cy.get('.cart-count', { timeout: 5000 }).then(($firstCount) => {
-      const firstCount = parseInt($firstCount.text());
+    // Wait for cart count to appear and get first count
+    cy.get('.cart-count', { timeout: 10000 }).should('be.visible').then(($firstCount) => {
+      const firstCount = parseInt($firstCount.text(), 10);
+      expect(firstCount).to.be.greaterThan(0);
       
-      // Navigate back and add another
+      // Navigate back and wait for products to load
       cy.get('.header-logo').click();
+      cy.get('.product-grid', { timeout: 5000 }).should('be.visible');
+      cy.get('.product-card').should('have.length.greaterThan', 1);
+      
+      // Add second product (use eq(1) to get a different product)
       cy.get('.product-card').eq(1).click();
       cy.get('.product-detail', { timeout: 5000 }).should('be.visible');
       cy.get('.option-button.selected').should('have.length.at.least', 2);
       cy.get('.add-to-cart-button').click();
       
-      // Verify count increased
-      cy.get('.cart-count', { timeout: 5000 }).should(($newCount) => {
-        const newCount = parseInt($newCount.text());
+      // Wait for cart count to update and verify it increased
+      cy.get('.cart-count', { timeout: 10000 }).should('be.visible').then(($newCount) => {
+        const newCount = parseInt($newCount.text(), 10);
         expect(newCount).to.be.greaterThan(firstCount);
       });
     });

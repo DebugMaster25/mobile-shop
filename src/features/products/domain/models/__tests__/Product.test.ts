@@ -56,7 +56,7 @@ describe('Product', () => {
 
   describe('formattedPrice', () => {
     it('should format price in euros', () => {
-      expect(mockProduct.formattedPrice).toBe('€799.00');
+      expect(mockProduct.formattedPrice).toBe('Price: €799.00');
     });
 
     it('should handle zero price', () => {
@@ -65,7 +65,7 @@ describe('Product', () => {
         '', '', '', '', '', [''], '', '', '', '', '', [''], '', '', '', '', '', '', '', 
         [], { colors: [], storages: [] }
       );
-      expect(freeProduct.formattedPrice).toBe('€0.00');
+      expect(freeProduct.formattedPrice).toBe('Price: Not Known');
     });
   });
 

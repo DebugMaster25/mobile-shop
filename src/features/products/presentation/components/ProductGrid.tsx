@@ -8,7 +8,7 @@ interface ProductGridProps {
 }
 
 export const ProductGrid: React.FC<ProductGridProps> = ({ products }) => {
-  if (products.length === 0) {
+  if (!products || !Array.isArray(products) || products.length === 0) {
     return (
       <div className="no-products">
         <p>No products found</p>

@@ -26,7 +26,6 @@ export const ProductListPage: React.FC = () => {
   return (
     <div className="page-container">
       <div className="page-header">
-        <h2>All Products</h2>
         <SearchBar
           value={searchQuery}
           onChange={setSearchQuery}

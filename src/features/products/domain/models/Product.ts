@@ -83,7 +83,8 @@ export class Product {
    * Get formatted price for display
    */
   get formattedPrice(): string {
-    return `€${(this.price / 100).toFixed(2)}`;
+    if (!this.price) return 'Price: Not Known';
+    return `Price: €${(this.price / 100).toFixed(2)}`;
   }
 
   /**

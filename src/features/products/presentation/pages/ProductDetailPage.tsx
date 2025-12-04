@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import { Product, ProductColor, ProductStorage } from '@features/products/domain/models';
 import { useProducts } from '../context';
 import { useCart } from '@features/cart/presentation/context';
@@ -68,7 +68,6 @@ export const ProductDetailPage: React.FC = () => {
     return (
       <div className="page-container">
         <div className="error">{error || 'Product not found'}</div>
-        <Link to="/" className="back-link">Back to Products</Link>
       </div>
     );
   }

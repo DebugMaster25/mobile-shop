@@ -32,13 +32,13 @@ export class ProductMapper {
       dto.chipset,
       dto.gpu,
       dto.externalMemory,
-      dto.internalMemory,
+      Array.isArray(dto.internalMemory) ? dto.internalMemory : [],
       dto.ram,
       dto.primaryCamera,
       dto.secondaryCmera,
       dto.speaker,
       dto.audioJack,
-      dto.wlan,
+      Array.isArray(dto.wlan) ? dto.wlan : [],
       dto.bluetooth,
       dto.gps,
       dto.nfc,
@@ -46,10 +46,10 @@ export class ProductMapper {
       dto.usb,
       dto.sensors,
       dto.battery,
-      this.mapColors(dto.colors),
+      this.mapColors(dto.colors ?? []),
       {
-        colors: this.mapColors(dto.options.colors),
-        storages: this.mapStorages(dto.options.storages),
+        colors: this.mapColors(dto.options?.colors ?? []),
+        storages: this.mapStorages(dto.options?.storages ?? []),
       }
     );
   }
@@ -57,7 +57,10 @@ export class ProductMapper {
   /**
    * Convert array of ProductDTOs to array of Products
    */
-  static toDomainList(dtos: ProductDTO[]): Product[] {
+  static toDomainList(dtos: ProductDTO[] | undefined | null): Product[] {
+    if (!dtos || !Array.isArray(dtos)) {
+      return [];
+    }
     return dtos.map((dto) => this.toDomain(dto));
   }
 
@@ -82,7 +85,10 @@ export class ProductMapper {
   /**
    * Map color DTOs to domain colors
    */
-  private static mapColors(colorDTOs: ProductColorDTO[]): ProductColor[] {
+  private static mapColors(colorDTOs: ProductColorDTO[] | undefined | null): ProductColor[] {
+    if (!colorDTOs || !Array.isArray(colorDTOs)) {
+      return [];
+    }
     return colorDTOs.map((dto) => ({
       code: dto.code,
       name: dto.name,
@@ -92,7 +98,10 @@ export class ProductMapper {
   /**
    * Map storage DTOs to domain storages
    */
-  private static mapStorages(storageDTOs: ProductStorageDTO[]): ProductStorage[] {
+  private static mapStorages(storageDTOs: ProductStorageDTO[] | undefined | null): ProductStorage[] {
+    if (!storageDTOs || !Array.isArray(storageDTOs)) {
+      return [];
+    }
     return storageDTOs.map((dto) => ({
       code: dto.code,
       name: dto.name,
