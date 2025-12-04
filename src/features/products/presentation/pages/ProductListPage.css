@@ -1,0 +1,32 @@
+.page-container {
+    min-height: calc(100vh - 80px);
+    background-color: #f5f6fa;
+  }
+  
+  .page-header {
+    background: white;
+    padding: 2rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .page-header h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+  }
+  
+  .loading,
+  .error {
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.1rem;
+  }
+  
+  .loading {
+    color: #666;
+  }
+  
+  .error {
+    color: #e74c3c;
+  }
