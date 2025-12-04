@@ -170,6 +170,15 @@ npm run test:e2e       # Headless mode
 npm run test:e2e:open  # Interactive mode
 ```
 
+E2E tests cover:
+- Product list page functionality
+- Product search and filtering
+- Product detail page navigation
+- Shopping cart operations
+- Cart count persistence
+- Responsive design verification
+- Breadcrumbs navigation
+
 ## 📦 Build
 
 ### Development
