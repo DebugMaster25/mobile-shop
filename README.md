@@ -1,4 +1,4 @@
-# Mobile Shop - E-Commerce Application
+ # Mobile Shop - E-Commerce Application
 
 A mobile device e-commerce application built with React, TypeScript, and hexagonal architecture principles.
 
@@ -10,7 +10,7 @@ npm install
 
 # Start development server
 npm start
-
+ 
 # Build for production
 npm run build
 
