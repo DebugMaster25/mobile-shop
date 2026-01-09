@@ -4,7 +4,7 @@ A mobile device e-commerce application built with React, TypeScript, and hexagon
 
 ## 🚀 Quick Start
 
-```bash
+```bash 
 # Install dependencies
 npm install
 
